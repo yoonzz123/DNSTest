@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Home Page</h2>
+<input id="file" type="file" multiple />
+<button onclick="fileReader()">ㅁㄴㅇㄹㅁ</button>
+<p class="log"></p>
+</body>
+<script>
+    function test(){
+        console.log("hello~~")
+    }
+    function fileReader(){
+
+        let file = document.getElementById("file").files[0];
+        let pEl = document.querySelector('.log');
+
+        const reader = new FileReader();
+        // 읽기 작업 완료
+        reader.addEventListener('load', () => {
+            // 요소에 결과 출력
+            pEl.textContent = reader.result;
+        });
+
+        reader.readAsText(file);
+
+    }
+
+
+
+</script>
+</html>
